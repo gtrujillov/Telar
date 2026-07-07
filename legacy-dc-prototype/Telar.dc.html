@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Spline+Sans+Mono:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F5; --ink:#1F2733; --muted:#5A6472;
+  --line:#D8DEE3; --surface:#FFFFFF;
+  --anil:#3D5AA6; --anil-soft:#E4E9F3; --grana:#A03A50;
+}
+[data-theme="oscuro"]{
+  --paper:#1B222D; --ink:#E9ECEF; --muted:#98A3B1;
+  --line:#333E4E; --surface:#232C39;
+  --anil:#8AA3DC; --anil-soft:#28344A; --grana:#D07A8B;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;transition:background-color .35s ease,color .35s ease;-webkit-font-smoothing:antialiased}
+a{color:var(--anil);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--grana)}
+::selection{background:var(--anil);color:var(--paper)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (max-width:840px){
+  [data-rsp="grid"]{grid-template-columns:1fr !important}
+  section[data-screen-label]{padding-top:56px !important;padding-bottom:56px !important}
+  h1{font-size:34px !important}
+}
+@media (max-width:560px){
+  [data-rsp="grid-sm"]{grid-template-columns:1fr !important}
+}
+</style>
+</helmet>
+
+<sc-if value="{{ urdimbre }}" hint-placeholder-val="{{ true }}">
+  <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;background-image:repeating-linear-gradient(90deg,var(--line) 0px,var(--line) 1px,transparent 1px,transparent 180px);opacity:.55;z-index:0"></div>
+</sc-if>
+
+<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 32px">
+
+  <!-- ============ HEADER ============ -->
+  <header data-screen-label="Cabecera" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:28px 0;border-bottom:1px solid var(--line)">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div aria-hidden="true" style="position:relative;width:22px;height:22px">
+        <div style="position:absolute;left:0;top:4px;width:22px;height:3px;background:var(--anil)"></div>
+        <div style="position:absolute;left:0;top:14px;width:22px;height:3px;background:var(--anil)"></div>
+        <div style="position:absolute;left:9px;top:0;width:3px;height:22px;background:var(--grana)"></div>
+      </div>
+      <span style="font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:700;font-size:22px;letter-spacing:.01em">Telar</span>
+    </div>
+    <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.04em">
+      <a href="#proceso" style="color:var(--ink);text-decoration:none" style-hover="color:var(--anil)">Proceso</a>
+      <a href="#sectores" style="color:var(--ink);text-decoration:none" style-hover="color:var(--anil)">Sectores</a>
+      <a href="#escenarios" style="color:var(--ink);text-decoration:none" style-hover="color:var(--anil)">Escenarios</a>
+      <a href="#contacto" style="color:var(--paper);background:var(--ink);text-decoration:none;padding:10px 18px" style-hover="background:var(--anil);color:#fff">Agendar llamada</a>
+      <button onClick="{{ toggleTema }}" title="Cambiar tema" style="font-family:'Spline Sans Mono',monospace;font-size:12px;background:none;border:1px solid var(--line);color:var(--muted);padding:9px 12px;cursor:pointer" style-hover="border-color:var(--anil);color:var(--anil)">{{ temaEtiqueta }}</button>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" style="padding:110px 0 90px;border-bottom:1px solid var(--line)">
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--anil);margin:0 0 28px;animation:rise .6s ease both">Agentes de IA para pymes · España</p>
+    <h1 style="font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:640;font-size:clamp(38px,5.6vw,68px);line-height:1.06;letter-spacing:-.015em;margin:0;max-width:19ch;animation:rise .6s .08s ease both">El talento de tu equipo está enterrado en papeleo. Vamos a desenterrarlo.</h1>
+    <div data-rsp="grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;margin-top:44px;align-items:start;animation:rise .6s .16s ease both">
+      <p style="font-size:20px;line-height:1.55;margin:0;max-width:52ch;color:var(--ink)">Diseñamos agentes de IA que leen correos, facturas y documentos y dejan el trabajo preparado para que tu equipo lo revise y decida. No sustituyen a nadie: liberan a las personas de lo mecánico para que hagan lo que solo ellas saben hacer — atender, asesorar, vender.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <a href="#contacto" style="display:inline-block;background:var(--anil);color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:110%;font-weight:600;font-size:17px;padding:16px 28px" style-hover="background:var(--grana);color:#fff">Pedir una auditoría de procesos</a>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:var(--muted);margin:0">30 minutos · sin compromiso · te decimos si no compensa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL PROBLEMA ============ -->
+  <section data-screen-label="El problema" data-rsp="grid" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:90px 0;border-bottom:1px solid var(--line)">
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0">El problema</p>
+    <div>
+      <h2 style="font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:620;font-size:clamp(26px,3vw,38px);line-height:1.15;margin:0 0 40px;max-width:26ch">Seguro que reconoces alguna de estas medias horas.</h2>
+      <div data-rsp="grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+        <div style="background:var(--surface);padding:28px 26px">
+          <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--anil);margin:0 0 14px">En un despacho</p>
+          <p style="font-size:17px;line-height:1.55;margin:0;color:var(--ink)">Cada consulta nueva de un cliente son 25 minutos de leerla, clasificarla y localizar el expediente — antes de empezar siquiera a responder.</p>
+        </div>
+        <div style="background:var(--surface);padding:28px 26px">
+          <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--anil);margin:0 0 14px">En un restaurante</p>
+          <p style="font-size:17px;line-height:1.55;margin:0;color:var(--ink)">Las facturas de proveedores llegan por correo, por foto de WhatsApp y en papel. Alguien las pica a mano en la hoja de costes cada semana.</p>
+        </div>
+        <div style="background:var(--surface);padding:28px 26px">
+          <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--anil);margin:0 0 14px">En un comercio</p>
+          <p style="font-size:17px;line-height:1.55;margin:0;color:var(--ink)">Cada producto nuevo exige redactar la ficha, adaptarla a dos plataformas y cuadrar el stock. Media tarde por lote de novedades.</p>
+        </div>
+      </div>
+      <p style="font-size:19px;line-height:1.6;margin:40px 0 0;max-width:58ch">Detrás de cada una de esas tareas hay una persona con experiencia haciendo trabajo de máquina. Un agente bien diseñado se ocupa de la parte mecánica y le devuelve a esa persona el tiempo para lo que mejor sabe hacer: atender, asesorar, decidir.</p>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO TRABAJAMOS ============ -->
+  <section id="proceso" data-screen-label="Cómo trabajamos" data-rsp="grid" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:90px 0;border-bottom:1px solid var(--line)">
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0">Cómo trabajamos</p>
+    <div>
+      <h2 style="font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:620;font-size:clamp(26px,3vw,38px);line-height:1.15;margin:0 0 12px;max-width:26ch">Cuatro pasos, en este orden.</h2>
+      <p style="font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 48px;max-width:56ch">El orden importa: no se diseña nada sin haber medido antes dónde se va el tiempo, y no se mide el ahorro sin haber supervisado antes al agente.</p>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ pasos }}" as="paso" hint-placeholder-count="4">
+          <div data-rsp="grid-sm" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.2fr);gap:16px 32px;padding:32px 0;border-top:1px solid var(--line);align-items:baseline">
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:15px;color:var(--grana)">{{ paso.num }}</span>
+            <h3 style="font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:600;font-size:21px;line-height:1.25;margin:0">{{ paso.titulo }}</h3>
+            <p style="font-size:17px;line-height:1.6;margin:0;color:var(--muted)">{{ paso.detalle }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTORES ============ -->
+  <section id="sectores" data-screen-label="Sectores" data-rsp="grid" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:90px 0;border-bottom:1px solid var(--line)">
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0">Sectores</p>
+    <div>
+      <h2 style="font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:620;font-size:clamp(26px,3vw,38px);line-height:1.15;margin:0 0 48px;max-width:28ch">Trabajamos donde el papeleo pesa más que el negocio.</h2>
+      <div data-rsp="grid-sm" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px">
+        <sc-for list="{{ sectores }}" as="sector" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--anil);padding-top:20px">
+            <h3 style="font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:620;font-size:20px;margin:0">{{ sector.nombre }}</h3>
+            <p style="font-size:16px;line-height:1.6;margin:0;color:var(--muted)">{{ sector.procesos }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESCENARIOS ============ -->
+  <section id="escenarios" data-screen-label="Escenarios" data-rsp="grid" style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:90px 0;border-bottom:1px solid var(--line)">
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0">Escenarios</p>
+    <div>
+      <h2 style="font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:620;font-size:clamp(26px,3vw,38px);line-height:1.15;margin:0 0 16px;max-width:26ch">Así trabajaríamos contigo.</h2>
+      <p style="font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 44px;max-width:58ch">Somos un estudio joven y aún no publicamos casos de clientes. Lo que sigue son escenarios ilustrativos — proyecciones realistas de proyectos tipo, no testimonios — para que veas cómo pensamos un encargo.</p>
+      <div data-rsp="grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px">
+        <sc-for list="{{ escenarios }}" as="esc" hint-placeholder-count="2">
+          <article style="background:var(--surface);border:1px solid var(--line);padding:32px 30px;display:flex;flex-direction:column;gap:18px">
+            <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grana);margin:0">Escenario ilustrativo — no es un cliente real</p>
+            <h3 style="font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:620;font-size:21px;line-height:1.3;margin:0">{{ esc.titulo }}</h3>
+            <p style="font-size:16px;line-height:1.6;margin:0;color:var(--ink)"><strong style="font-weight:600">La situación.</strong> {{ esc.situacion }}</p>
+            <p style="font-size:16px;line-height:1.6;margin:0;color:var(--ink)"><strong style="font-weight:600">Lo que haría el agente.</strong> {{ esc.agente }}</p>
+            <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;align-items:baseline;gap:12px">
+              <span style="font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:700;font-size:28px;color:var(--anil)">{{ esc.cifra }}</span>
+              <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:var(--muted)">{{ esc.cifraNota }}</span>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="contacto" data-screen-label="Llamada a la acción" style="padding:110px 0;text-align:center;border-bottom:1px solid var(--line)">
+    <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:26px">
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--anil);margin:0">Primer paso</p>
+      <h2 style="font-family:'Archivo',sans-serif;font-stretch:122%;font-weight:640;font-size:clamp(30px,4vw,48px);line-height:1.1;margin:0">Una llamada de 30 minutos. Salimos con tu lista de tareas automatizables.</h2>
+      <p style="font-size:18px;line-height:1.6;color:var(--muted);margin:0;max-width:48ch">Nos cuentas cómo trabaja tu equipo y te decimos, en la misma llamada, qué procesos merecen un agente y cuáles no. Si no compensa, también se dice.</p>
+      <a href="mailto:hola@telar.es?subject=Auditor%C3%ADa%20de%20procesos" style="display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:110%;font-weight:600;font-size:18px;padding:18px 36px" style-hover="background:var(--anil);color:#fff">Agendar la llamada</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer data-screen-label="Pie de página" data-rsp="grid" style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:48px;padding:48px 0 56px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span style="font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:700;font-size:19px">Telar</span>
+      <p style="font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:36ch">Agentes de IA que se ocupan de lo mecánico y devuelven tiempo a las personas. Siempre con supervisión humana.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px">
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Contacto</span>
+      <a href="mailto:hola@telar.es">hola@telar.es</a>
+      <a href="tel:+34910000000">+34 910 000 000</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px">
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Estudio</span>
+      <span style="color:var(--muted)">Madrid, España</span>
+      <span style="color:var(--muted)">© 2026 Telar</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;tema&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;claro&quot;, &quot;oscuro&quot;], &quot;default&quot;: &quot;claro&quot;, &quot;tsType&quot;: &quot;'claro' | 'oscuro'&quot;, &quot;section&quot;: &quot;Apariencia&quot; },
+  &quot;urdimbre&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Apariencia&quot; }
+}">
+class Component extends DCLogic {
+  state = { tema: null };
+
+  temaEfectivo() {
+    return this.state.tema ?? this.props.tema ?? 'claro';
+  }
+
+  aplicarTema() {
+    document.documentElement.dataset.theme = this.temaEfectivo();
+  }
+
+  componentDidMount() { this.aplicarTema(); }
+  componentDidUpdate() { this.aplicarTema(); }
+
+  renderVals() {
+    const tema = this.temaEfectivo();
+    return {
+      urdimbre: this.props.urdimbre ?? true,
+      temaEtiqueta: tema === 'oscuro' ? 'Claro' : 'Oscuro',
+      toggleTema: () => this.setState({ tema: tema === 'oscuro' ? 'claro' : 'oscuro' }),
+      pasos: [
+        { num: '1', titulo: 'Auditoría de procesos', detalle: 'Una semana observando cómo trabaja tu equipo. Entregable: un mapa de tareas automatizables con las horas que consume cada una. Sin humo: si no hay nada que automatizar, lo decimos y ahí acaba.' },
+        { num: '2', titulo: 'Diseño del agente', detalle: 'Definimos exactamente qué lee el agente (correos, facturas, formularios), qué prepara y — sobre todo — qué no decide nunca solo. Los límites se pactan contigo por escrito.' },
+        { num: '3', titulo: 'Implementación supervisada', detalle: 'El agente trabaja en modo borrador: cada salida pasa por alguien de tu equipo. Solo se le da autonomía en lo que ya revisáis sin corregir. La confianza se gana, no se presupone.' },
+        { num: '4', titulo: 'Medición del ahorro', detalle: 'Informe mensual de horas recuperadas y tasa de corrección. Si el ahorro real no cubre el coste, se ajusta el alcance o se para el proyecto.' }
+      ],
+      sectores: [
+        { nombre: 'Despachos profesionales', procesos: 'Clasificación de consultas entrantes, extracción de datos de nóminas y facturas, borradores de escritos y respuestas recurrentes, alta de expedientes.' },
+        { nombre: 'Hostelería', procesos: 'Digitalización de facturas de proveedor, cuadre con albaranes, propuestas de pedido según consumo, borradores de respuesta a reseñas y reservas.' },
+        { nombre: 'Comercio', procesos: 'Fichas de producto a partir de catálogos de proveedor, sincronización entre plataformas de venta, conciliación de albaranes y stock.' },
+        { nombre: 'Empresas de servicios', procesos: 'Partes de trabajo a partir de notas de los técnicos, borradores de presupuesto, seguimiento de correos sin responder y avisos de vencimiento.' }
+      ],
+      escenarios: [
+        {
+          titulo: 'Despacho laboral de 8 personas',
+          situacion: 'Reciben unas 40 consultas de clientes al día por correo. Una administrativa dedica la mañana a leerlas, clasificarlas por materia y asignarlas al expediente correcto.',
+          agente: 'Leería cada correo entrante, lo vincularía al expediente, propondría la clasificación y prepararía un borrador de respuesta para las consultas recurrentes. Ella pasaría de transcribir a supervisar — y ganaría la mañana para atender a los clientes.',
+          cifra: '~9 h/semana',
+          cifraNota: 'proyección de ahorro estimada'
+        },
+        {
+          titulo: 'Grupo de tres restaurantes',
+          situacion: 'Las facturas de proveedor llegan por correo, foto y papel. El encargado las transcribe a la hoja de costes cada domingo — y los errores de precio se detectan semanas tarde.',
+          agente: 'Extraería líneas y precios de cada factura, las cuadraría con los albaranes y avisaría de cualquier subida de precio el mismo día. El encargado validaría las alertas, no los datos.',
+          cifra: '~6 h/semana',
+          cifraNota: 'proyección de ahorro estimada'
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
