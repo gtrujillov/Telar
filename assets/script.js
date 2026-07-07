@@ -48,24 +48,38 @@
     }
   }
 
-  /* --- Barra de progreso de scroll --- */
+  /* --- Barra de progreso de scroll + parallax de la foto del telar --- */
   const progressBar = document.querySelector(".scroll-progress");
-  if (progressBar) {
+  const parallaxImg = document.querySelector(".visual-break-media img");
+  const parallaxContainer = document.querySelector(".visual-break-media");
+
+  if (progressBar || (parallaxImg && !reduceMotion)) {
     let ticking = false;
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-      progressBar.style.width = pct + "%";
+    const updateScrollFx = () => {
+      if (progressBar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        progressBar.style.width = pct + "%";
+      }
+      if (parallaxImg && parallaxContainer && !reduceMotion) {
+        const rect = parallaxContainer.getBoundingClientRect();
+        const vh = window.innerHeight;
+        if (rect.bottom > 0 && rect.top < vh) {
+          const centerDelta = (rect.top + rect.height / 2) - vh / 2;
+          const offset = Math.max(-40, Math.min(40, centerDelta * -0.08));
+          parallaxImg.style.transform = `scale(1.08) translateY(${offset}px)`;
+        }
+      }
       ticking = false;
     };
-    updateProgress();
+    updateScrollFx();
     window.addEventListener("scroll", () => {
       if (!ticking) {
-        requestAnimationFrame(updateProgress);
+        requestAnimationFrame(updateScrollFx);
         ticking = true;
       }
     }, { passive: true });
-    window.addEventListener("resize", updateProgress);
+    window.addEventListener("resize", updateScrollFx);
   }
 
   /* --- Titular del hero: revelado palabra a palabra --- */
@@ -85,7 +99,8 @@
     { selector: ".sector", step: 90 },
     { selector: ".escenario", step: 140 },
     { selector: ".section-title", step: 0 },
-    { selector: ".cta-inner > *", step: 80 }
+    { selector: ".cta-inner > *", step: 80 },
+    { selector: ".visual-break-text, .visual-break-credit", step: 100 }
   ];
 
   const revealTargets = [];
