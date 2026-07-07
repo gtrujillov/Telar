@@ -1,5 +1,14 @@
 [
   {
+    "slug": "deepseek-desarrolla-su-propio-chip-de-inteligencia-artificial",
+    "titulo": "DeepSeek desarrolla su propio chip de inteligencia artificial",
+    "resumen": "DeepSeek, una empresa china de inteligencia artificial, está desarrollando su propio chip de inteligencia artificial orientado a tareas de inferencia, según informa Reuters. Esto supone un salto al hardware para la empresa, que hasta ahora se ha centrado en el software. El objetivo es reducir la dependencia de proveedores externos y controlar mejor el coste y el rendimiento del cómputo que sustenta sus servicios. La noticia sugiere que la dependencia de la industria de la inteligencia artificial en los chips de NVIDIA puede estar empezando a tener grietas.",
+    "categoria": "Modelos de IA",
+    "fecha": "2026-07-07",
+    "fuente_nombre": "Xataka IA",
+    "fuente_url": "https://www.xataka.com/robotica-e-ia/deepseek-no-quiere-competir-solo-modelos-su-nuevo-frente-apunta-directamente-al-negocio-nvidia-reuters"
+  },
+  {
     "slug": "reglamento-europeo-ia-pymes-agosto-2026",
     "titulo": "El Reglamento Europeo de IA entra en su fase clave el 2 de agosto",
     "resumen": "A partir de esa fecha, las empresas que usen sistemas de IA de alto riesgo deberán documentar su funcionamiento, garantizar supervisión humana y evaluar su conformidad. Para pymes hay medidas específicas: menos carga documental, tasas reducidas y acceso a sandboxes regulatorios para probar antes de lanzar.",
