@@ -1,5 +1,14 @@
 [
   {
+    "slug": "alibaba-enfrenta-desafios-para-monetizar-su-modelo-de-ia-qwen",
+    "titulo": "Alibaba enfrenta desafios para monetizar su modelo de IA Qwen",
+    "resumen": "El modelo de IA Qwen de Alibaba es muy popular, con cerca de un millon de descargas diarias, pero la empresa esta teniendo dificultades para generar ingresos con el. A pesar de ser el modelo abierto de IA mas descargado del mundo, los ingresos relacionados con IA apenas alcanzaron el 4% de la facturacion total de Alibaba en el primer trimestre de 2026. La presion por convertir estos modelos abiertos en un negocio esta dividiendo al equipo de Qwen y la empresa enfrenta presiones externas, incluyendo una lista negra del Pentagono y acusaciones de intentar copiar tecnologia de otras empresas.",
+    "categoria": "Modelos de IA",
+    "fecha": "2026-07-07",
+    "fuente_nombre": "Xataka IA",
+    "fuente_url": "https://www.xataka.com/robotica-e-ia/modelo-ia-qwen-alibaba-nueva-joya-corona-unico-problema-que-no-ganan-dinero"
+  },
+  {
     "slug": "deepseek-desarrolla-su-propio-chip-de-inteligencia-artificial",
     "titulo": "DeepSeek desarrolla su propio chip de inteligencia artificial",
     "resumen": "DeepSeek, una empresa china de inteligencia artificial, está desarrollando su propio chip de inteligencia artificial orientado a tareas de inferencia, según informa Reuters. Esto supone un salto al hardware para la empresa, que hasta ahora se ha centrado en el software. El objetivo es reducir la dependencia de proveedores externos y controlar mejor el coste y el rendimiento del cómputo que sustenta sus servicios. La noticia sugiere que la dependencia de la industria de la inteligencia artificial en los chips de NVIDIA puede estar empezando a tener grietas.",
