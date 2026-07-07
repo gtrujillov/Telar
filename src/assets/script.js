@@ -100,7 +100,9 @@
     { selector: ".escenario", step: 140 },
     { selector: ".section-title", step: 0 },
     { selector: ".cta-inner > *", step: 80 },
-    { selector: ".visual-break-text, .visual-break-credit", step: 100 }
+    { selector: ".visual-break-text, .visual-break-credit", step: 100 },
+    { selector: ".noticia-card", step: 90 },
+    { selector: ".noticia-articulo-fuente, .noticia-articulo-otras", step: 100 }
   ];
 
   const revealTargets = [];

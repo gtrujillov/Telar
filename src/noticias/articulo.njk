@@ -1,0 +1,34 @@
+---
+layout: layout.njk
+pagination:
+  data: noticias
+  size: 1
+  alias: item
+permalink: "/noticias/{{ item.slug }}/"
+---
+<section class="labeled-section">
+  <p class="eyebrow"><a href="/noticias/">Noticias</a> / {{ item.categoria }}</p>
+  <div>
+    <p class="noticia-articulo-fecha">{{ item.fecha }}</p>
+    <h1 class="section-title">{{ item.titulo }}</h1>
+    <p class="noticia-articulo-resumen">{{ item.resumen }}</p>
+
+    <div class="noticia-articulo-fuente">
+      <p>Este resumen es una curación de Telar. El artículo completo está en {{ item.fuente_nombre }}.</p>
+      <a href="{{ item.fuente_url }}" class="btn-primary" target="_blank" rel="noopener noreferrer">Leer la noticia completa en {{ item.fuente_nombre }} ↗</a>
+    </div>
+
+    {%- if noticias | length > 1 %}
+    <div class="noticia-articulo-otras">
+      <p class="label">Más noticias</p>
+      <ul>
+        {%- for otra in noticias %}
+        {%- if otra.slug != item.slug %}
+        <li><a href="/noticias/{{ otra.slug }}/">{{ otra.titulo }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+  </div>
+</section>

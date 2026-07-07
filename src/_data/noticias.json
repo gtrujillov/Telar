@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "reglamento-europeo-ia-pymes-agosto-2026",
+    "titulo": "El Reglamento Europeo de IA entra en su fase clave el 2 de agosto",
+    "resumen": "A partir de esa fecha, las empresas que usen sistemas de IA de alto riesgo deberán documentar su funcionamiento, garantizar supervisión humana y evaluar su conformidad. Para pymes hay medidas específicas: menos carga documental, tasas reducidas y acceso a sandboxes regulatorios para probar antes de lanzar.",
+    "categoria": "Regulación · Pymes",
+    "fecha": "2026-07-06",
+    "fuente_nombre": "Iberley",
+    "fuente_url": "https://www.iberley.es/revista/reglamento-europeo-ia-claves-empresariales-2026-1584"
+  },
+  {
+    "slug": "anthropic-recupera-acceso-global-claude-fable-5",
+    "titulo": "Anthropic recupera el acceso global a Claude Fable 5",
+    "resumen": "Tras 19 días suspendido por restricciones de exportación de EE. UU. — motivadas por un informe sobre su uso para detectar vulnerabilidades de software —, Anthropic restableció el acceso a su modelo más potente con un nuevo clasificador de ciberseguridad. Ya está disponible de nuevo en Claude Code, la API y Claude.ai.",
+    "categoria": "Modelos de IA",
+    "fecha": "2026-07-01",
+    "fuente_nombre": "Anthropic",
+    "fuente_url": "https://www.anthropic.com/news/redeploying-fable-5"
+  },
+  {
+    "slug": "onu-ia-avanza-mas-rapido-que-las-normas",
+    "titulo": "La ONU avisa: la IA avanza más rápido que las normas que la regulan",
+    "resumen": "Un panel científico independiente de la ONU, con expertos de 40 países, advierte que los gobiernos no llegan a tiempo para regular el ritmo de avance de la IA. El informe pide gobernanza mundial urgente antes de que los riesgos — desinformación, ciberdelitos, desigualdad — superen a los beneficios.",
+    "categoria": "Regulación",
+    "fecha": "2026-07-01",
+    "fuente_nombre": "Noticias ONU",
+    "fuente_url": "https://news.un.org/es/story/2026/07/1541630"
+  }
+]

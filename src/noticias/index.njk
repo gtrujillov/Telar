@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+title: "Noticias de IA y tecnología para pymes — Telar"
+description: "Selección de noticias sobre inteligencia artificial y tecnología, con foco en lo que de verdad afecta a despachos, hostelería, comercio y pymes en España."
+permalink: /noticias/
+---
+<section class="labeled-section">
+  <p class="eyebrow">Noticias</p>
+  <div>
+    <h1 class="section-title">Actualidad de IA, sin ruido.</h1>
+    <p class="section-sub">Seleccionamos lo que pasa en inteligencia artificial y tecnología que de verdad afecta a un despacho, un restaurante o un comercio — no cada anuncio de cada empresa. Enlazamos siempre a la fuente original.</p>
+
+    <div class="noticias-grid">
+      {%- for item in noticias %}
+      <article class="noticia-card">
+        <div class="noticia-card-meta">
+          <span class="tag">{{ item.categoria }}</span>
+          <time datetime="{{ item.fecha }}">{{ item.fecha }}</time>
+        </div>
+        <h2><a href="/noticias/{{ item.slug }}/">{{ item.titulo }}</a></h2>
+        <p class="noticia-card-resumen">{{ item.resumen }}</p>
+        <span class="noticia-card-fuente">Fuente: {{ item.fuente_nombre }}</span>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

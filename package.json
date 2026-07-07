@@ -1,0 +1,26 @@
+{
+  "name": "telera",
+  "version": "1.0.0",
+  "description": "Web de Telar. Generada con Eleventy a partir de src/ (páginas estáticas + sección de noticias).",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtrujillov/Telar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gtrujillov/Telar/issues"
+  },
+  "homepage": "https://github.com/gtrujillov/Telar#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
