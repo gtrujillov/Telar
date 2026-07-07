@@ -102,7 +102,8 @@
     { selector: ".cta-inner > *", step: 80 },
     { selector: ".visual-break-text, .visual-break-credit", step: 100 },
     { selector: ".noticia-card", step: 90 },
-    { selector: ".noticia-articulo-fuente, .noticia-articulo-otras", step: 100 }
+    { selector: ".noticia-articulo-fuente, .noticia-articulo-otras", step: 100 },
+    { selector: ".section-cta", step: 0 }
   ];
 
   const revealTargets = [];
@@ -161,6 +162,29 @@
         btn.style.transform = "translate(0, 0)";
       });
     });
+  }
+
+  /* --- CTA fijo: aparece tras el primer scroll, se oculta sobre #contacto --- */
+  const stickyCta = document.querySelector(".sticky-cta");
+  if (stickyCta) {
+    const contacto = document.getElementById("contacto");
+    let ctaTicking = false;
+    const updateStickyCta = () => {
+      let show = window.scrollY > 480;
+      if (contacto && contacto.getBoundingClientRect().top < window.innerHeight) {
+        show = false;
+      }
+      stickyCta.classList.toggle("visible", show);
+      ctaTicking = false;
+    };
+    updateStickyCta();
+    window.addEventListener("scroll", () => {
+      if (!ctaTicking) {
+        requestAnimationFrame(updateStickyCta);
+        ctaTicking = true;
+      }
+    }, { passive: true });
+    window.addEventListener("resize", updateStickyCta);
   }
 
   /* --- Cifras animadas al entrar en pantalla --- */
