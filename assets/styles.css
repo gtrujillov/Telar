@@ -313,3 +313,162 @@ footer {
   .sectores-grid, .paso { grid-template-columns: 1fr !important; }
   footer { grid-template-columns: 1fr !important; }
 }
+
+/* ============================================================
+   ANIMACIÓN Y EFECTOS — motivo "telar" (hilos que se entrecruzan)
+   ============================================================ */
+
+/* --- Intro de cortina (se ejecuta una vez al cargar) --- */
+.page-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+}
+.page-intro-panel { flex: 1; }
+.page-intro-panel--a { background: var(--anil); animation: wipe-left .9s cubic-bezier(.76,0,.24,1) .15s forwards; }
+.page-intro-panel--b { background: var(--grana); animation: wipe-right .9s cubic-bezier(.76,0,.24,1) .15s forwards; }
+@keyframes wipe-left { to { transform: translateX(-100%); } }
+@keyframes wipe-right { to { transform: translateX(100%); } }
+
+/* --- Grid de fondo: deriva lenta, como urdimbre de telar --- */
+.bg-grid { animation: grid-drift 44s linear infinite; }
+@keyframes grid-drift { from { background-position: 0 0; } to { background-position: 180px 0; } }
+
+/* --- Barra de progreso de scroll --- */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--anil), var(--grana));
+  z-index: 1000;
+  transition: width .12s linear;
+}
+
+/* --- Hilos tejidos en el hero --- */
+.hero { position: relative; overflow: hidden; }
+.hero-weave {
+  position: absolute;
+  inset: -15% -8%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .55;
+  animation: weave-drift 30s ease-in-out infinite alternate;
+  animation-delay: 2.2s;
+}
+[data-theme="oscuro"] .hero-weave { opacity: .38; }
+.hero-weave path {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: draw-thread 2.2s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-weave .thread-anil { stroke: var(--anil); }
+.hero-weave .thread-grana { stroke: var(--grana); }
+.hero-weave path:nth-child(1) { animation-delay: .05s; }
+.hero-weave path:nth-child(2) { animation-delay: .18s; }
+.hero-weave path:nth-child(3) { animation-delay: .3s; }
+.hero-weave path:nth-child(4) { animation-delay: .42s; }
+.hero-weave path:nth-child(5) { animation-delay: .55s; }
+.hero-weave path:nth-child(6) { animation-delay: .68s; }
+@keyframes draw-thread { to { stroke-dashoffset: 0; } }
+@keyframes weave-drift { from { transform: translate(0,0); } to { transform: translate(-2.5%, 2%); } }
+
+/* --- Titular: revelado palabra a palabra --- */
+.word { display: inline-block; overflow: hidden; vertical-align: top; }
+.word-inner {
+  display: inline-block;
+  transform: translateY(112%);
+  animation: word-rise .85s cubic-bezier(.16,1,.3,1) both;
+  animation-delay: calc(300ms + var(--i, 0) * 45ms);
+}
+@keyframes word-rise { to { transform: translateY(0); } }
+
+.accent-text {
+  background: linear-gradient(90deg, var(--anil), var(--grana), var(--anil));
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 7s ease-in-out infinite;
+}
+@keyframes gradient-shift { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } }
+
+/* .word-inner y .accent-text comparten elemento en el hero: la propiedad
+   "animation" es shorthand y una clase pisaría a la otra si no se combinan. */
+.word-inner.accent-text {
+  animation: word-rise .85s cubic-bezier(.16,1,.3,1) both, gradient-shift 7s ease-in-out infinite;
+  animation-delay: calc(300ms + var(--i, 0) * 45ms), 0s;
+}
+
+/* --- Revelado en scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* --- Nav: subrayado activo por sección --- */
+nav a.nav-link { position: relative; }
+nav a.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--anil);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+nav a.nav-link:hover::after,
+nav a.nav-link.active::after { transform: scaleX(1); }
+nav a.nav-link.active { color: var(--anil); }
+
+/* --- Botones: magnetismo + brillo --- */
+.btn-primary, .btn-dark, .btn-cta {
+  position: relative;
+  transition: transform .25s cubic-bezier(.2,1,.3,1), background-color .25s ease, box-shadow .35s ease, color .25s ease;
+}
+.btn-primary:hover, .btn-dark:hover { box-shadow: 0 14px 32px -10px rgba(61,90,166,.45); }
+[data-theme="oscuro"] .btn-primary:hover, [data-theme="oscuro"] .btn-dark:hover { box-shadow: 0 14px 32px -10px rgba(0,0,0,.55); }
+
+/* --- Tarjetas: profundidad al pasar el ratón --- */
+.problema-card, .escenario {
+  transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease;
+}
+.problema-card:hover, .escenario:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px -18px rgba(61,90,166,.35);
+}
+[data-theme="oscuro"] .problema-card:hover,
+[data-theme="oscuro"] .escenario:hover { box-shadow: 0 20px 44px -18px rgba(0,0,0,.6); }
+
+.sector { transition: border-color .35s ease, transform .35s ease; }
+.sector:hover { border-top-color: var(--grana); transform: translateX(4px); }
+.sector h3 { transition: color .3s ease; }
+.sector:hover h3 { color: var(--anil); }
+
+.paso { transition: padding-left .35s cubic-bezier(.16,1,.3,1); }
+.paso:hover { padding-left: 10px; }
+.paso .num { display: inline-block; transition: color .3s ease, transform .3s ease; }
+.paso:hover .num { color: var(--anil); transform: scale(1.2); }
+
+/* --- Cifras animadas --- */
+.count-target { font-variant-numeric: tabular-nums; }
+
+/* --- Accesibilidad: respeta "reducir movimiento" --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .page-intro { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .word-inner { transform: none !important; }
+  .bg-grid, .hero-weave { animation: none !important; }
+}

@@ -25,6 +25,11 @@
 </head>
 <body>
 
+<div class="page-intro" aria-hidden="true">
+  <span class="page-intro-panel page-intro-panel--a"></span>
+  <span class="page-intro-panel page-intro-panel--b"></span>
+</div>
+<div class="scroll-progress" aria-hidden="true"></div>
 <div class="bg-grid" aria-hidden="true"></div>
 
 <div class="wrap">
@@ -50,10 +55,18 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
+    <svg class="hero-weave" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path class="thread-anil" d="M-50,120 C 250,40 450,260 750,140 S 1150,60 1300,180" fill="none" stroke-width="1.5"/>
+      <path class="thread-grana" d="M-50,260 C 200,340 500,120 800,280 S 1100,340 1300,240" fill="none" stroke-width="1.5"/>
+      <path class="thread-anil" d="M-50,400 C 300,320 500,480 780,380 S 1120,300 1300,420" fill="none" stroke-width="1.5"/>
+      <path class="thread-grana" d="M-50,540 C 250,460 480,600 760,500 S 1150,440 1300,560" fill="none" stroke-width="1"/>
+      <path class="thread-anil" d="M120,-50 C 40,250 260,450 140,750" fill="none" stroke-width="1"/>
+      <path class="thread-grana" d="M980,-50 C 1060,250 840,450 960,750" fill="none" stroke-width="1"/>
+    </svg>
     <p class="eyebrow rise">Agentes de IA para pymes · España</p>
-    <h1 class="rise-1">El talento de tu equipo está enterrado en papeleo. Vamos a desenterrarlo.</h1>
+    <h1 class="rise-1">El talento de tu equipo no debería perderse en papeleo.</h1>
     <div class="hero-grid rise-2">
-      <p class="hero-lead">Diseñamos agentes de IA que leen correos, facturas y documentos y dejan el trabajo preparado para que tu equipo lo revise y decida. No sustituyen a nadie: liberan a las personas de lo mecánico para que hagan lo que solo ellas saben hacer — atender, asesorar, vender.</p>
+      <p class="hero-lead">Diseñamos agentes de IA que leen correos, facturas y documentos, y dejan el trabajo listo para revisar y decidir.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary">Pedir una auditoría de procesos</a>
         <p class="hint">30 minutos · sin compromiso · te decimos si no compensa</p>
@@ -69,18 +82,18 @@
       <div class="problema-grid">
         <div class="problema-card">
           <p class="tag">En un despacho</p>
-          <p class="body">Cada consulta nueva de un cliente son 25 minutos de leerla, clasificarla y localizar el expediente — antes de empezar siquiera a responder.</p>
+          <p class="body">Un cliente nuevo escribe un correo y alguien tiene que leerlo, clasificarlo y encontrar el expediente antes de poder responder.</p>
         </div>
         <div class="problema-card">
           <p class="tag">En un restaurante</p>
-          <p class="body">Las facturas de proveedores llegan por correo, por foto de WhatsApp y en papel. Alguien las pica a mano en la hoja de costes cada semana.</p>
+          <p class="body">Una factura de proveedor llega por foto de WhatsApp y alguien la copia a mano en la hoja de costes.</p>
         </div>
         <div class="problema-card">
           <p class="tag">En un comercio</p>
-          <p class="body">Cada producto nuevo exige redactar la ficha, adaptarla a dos plataformas y cuadrar el stock. Media tarde por lote de novedades.</p>
+          <p class="body">Cada ficha de producto hay que redactarla, subirla a dos plataformas y cuadrar el stock — otra vez.</p>
         </div>
       </div>
-      <p class="problema-close">Detrás de cada una de esas tareas hay una persona con experiencia haciendo trabajo de máquina. Un agente bien diseñado se ocupa de la parte mecánica y le devuelve a esa persona el tiempo para lo que mejor sabe hacer: atender, asesorar, decidir.</p>
+      <p class="problema-close">Nada de esto es difícil. Todo esto ocupa horas que tu equipo podría dedicar a atender, asesorar o vender.</p>
     </div>
   </section>
 
@@ -93,23 +106,23 @@
       <div>
         <div class="paso">
           <span class="num">1</span>
-          <h3>Auditoría de procesos</h3>
-          <p>Una semana observando cómo trabaja tu equipo. Entregable: un mapa de tareas automatizables con las horas que consume cada una. Sin humo: si no hay nada que automatizar, lo decimos y ahí acaba.</p>
+          <h3>Auditamos antes de tocar nada.</h3>
+          <p>Una semana observando cómo trabaja tu equipo. Si no hay nada que automatizar, te lo decimos y ahí termina.</p>
         </div>
         <div class="paso">
           <span class="num">2</span>
-          <h3>Diseño del agente</h3>
-          <p>Definimos exactamente qué lee el agente (correos, facturas, formularios), qué prepara y — sobre todo — qué no decide nunca solo. Los límites se pactan contigo por escrito.</p>
+          <h3>Diseñamos el agente contigo.</h3>
+          <p>Decidimos juntos qué lee, qué prepara y qué no decide nunca solo. Los límites quedan por escrito.</p>
         </div>
         <div class="paso">
           <span class="num">3</span>
-          <h3>Implementación supervisada</h3>
-          <p>El agente trabaja en modo borrador: cada salida pasa por alguien de tu equipo. Solo se le da autonomía en lo que ya revisáis sin corregir. La confianza se gana, no se presupone.</p>
+          <h3>Empieza en modo borrador.</h3>
+          <p>Cada salida del agente pasa por una persona de tu equipo. La autonomía se gana revisión a revisión.</p>
         </div>
         <div class="paso">
           <span class="num">4</span>
-          <h3>Medición del ahorro</h3>
-          <p>Informe mensual de horas recuperadas y tasa de corrección. Si el ahorro real no cubre el coste, se ajusta el alcance o se para el proyecto.</p>
+          <h3>Medimos el ahorro real.</h3>
+          <p>Informe mensual de horas recuperadas y errores corregidos. Si no compensa, ajustamos el alcance o paramos.</p>
         </div>
       </div>
     </div>
@@ -123,19 +136,19 @@
       <div class="sectores-grid">
         <div class="sector">
           <h3>Despachos profesionales</h3>
-          <p>Clasificación de consultas entrantes, extracción de datos de nóminas y facturas, borradores de escritos y respuestas recurrentes, alta de expedientes.</p>
+          <p>Consultas de clientes clasificadas por materia y vinculadas al expediente correcto. Datos de nóminas y facturas extraídos sin teclear. Borradores de escritos y respuestas recurrentes, listos para tu firma.</p>
         </div>
         <div class="sector">
           <h3>Hostelería</h3>
-          <p>Digitalización de facturas de proveedor, cuadre con albaranes, propuestas de pedido según consumo, borradores de respuesta a reseñas y reservas.</p>
+          <p>Facturas de proveedor leídas y cuadradas con el albarán, llegue como llegue: correo, foto o papel. Propuestas de pedido según el consumo real. Borradores de respuesta a reseñas y reservas.</p>
         </div>
         <div class="sector">
           <h3>Comercio</h3>
-          <p>Fichas de producto a partir de catálogos de proveedor, sincronización entre plataformas de venta, conciliación de albaranes y stock.</p>
+          <p>Fichas de producto redactadas a partir del catálogo del proveedor y adaptadas a cada plataforma de venta. Stock conciliado con los albaranes, sin hojas de cálculo paralelas.</p>
         </div>
         <div class="sector">
           <h3>Empresas de servicios</h3>
-          <p>Partes de trabajo a partir de notas de los técnicos, borradores de presupuesto, seguimiento de correos sin responder y avisos de vencimiento.</p>
+          <p>Partes de trabajo generados a partir de las notas del técnico. Borradores de presupuesto listos para revisar. Avisos de vencimiento y correos sin responder, detectados antes de que se conviertan en problema.</p>
         </div>
       </div>
     </div>
@@ -146,26 +159,26 @@
     <p class="eyebrow">Escenarios</p>
     <div>
       <h2 class="section-title" style="margin-bottom:16px">Así trabajaríamos contigo.</h2>
-      <p class="section-sub">Somos un estudio joven y aún no publicamos casos de clientes. Lo que sigue son escenarios ilustrativos — proyecciones realistas de proyectos tipo, no testimonios — para que veas cómo pensamos un encargo.</p>
+      <p class="section-sub">Somos un estudio joven. Todavía no tenemos casos reales que enseñar — así que te contamos, con dos escenarios ilustrativos, cómo pensamos un encargo real. No son testimonios: son proyecciones honestas.</p>
       <div class="escenarios-grid">
         <article class="escenario">
           <p class="tag">Escenario ilustrativo — no es un cliente real</p>
-          <h3>Despacho laboral de 8 personas</h3>
-          <p><strong>La situación.</strong> Reciben unas 40 consultas de clientes al día por correo. Una administrativa dedica la mañana a leerlas, clasificarlas por materia y asignarlas al expediente correcto.</p>
-          <p><strong>Lo que haría el agente.</strong> Leería cada correo entrante, lo vincularía al expediente, propondría la clasificación y prepararía un borrador de respuesta para las consultas recurrentes. Ella pasaría de transcribir a supervisar — y ganaría la mañana para atender a los clientes.</p>
+          <h3>Así trabajaríamos con un despacho como el tuyo</h3>
+          <p><strong>La situación.</strong> Ocho personas, unas cuarenta consultas de clientes al día por correo. Una administrativa dedica la mañana a leerlas, clasificarlas y asignarlas al expediente correcto.</p>
+          <p><strong>Lo que haría el agente.</strong> Leería cada correo, lo vincularía al expediente, propondría la clasificación y dejaría un borrador de respuesta listo para las consultas recurrentes. Ella pasaría de transcribir a supervisar.</p>
           <div class="escenario-cifra">
-            <span class="num">~9 h/semana</span>
-            <span class="note">proyección de ahorro estimada</span>
+            <span class="num">~<span class="count-target" data-count="9">9</span> h/semana</span>
+            <span class="note">estimación ilustrativa, no un dato medido</span>
           </div>
         </article>
         <article class="escenario">
           <p class="tag">Escenario ilustrativo — no es un cliente real</p>
-          <h3>Grupo de tres restaurantes</h3>
-          <p><strong>La situación.</strong> Las facturas de proveedor llegan por correo, foto y papel. El encargado las transcribe a la hoja de costes cada domingo — y los errores de precio se detectan semanas tarde.</p>
-          <p><strong>Lo que haría el agente.</strong> Extraería líneas y precios de cada factura, las cuadraría con los albaranes y avisaría de cualquier subida de precio el mismo día. El encargado validaría las alertas, no los datos.</p>
+          <h3>Así trabajaríamos con un grupo de restaurantes como el tuyo</h3>
+          <p><strong>La situación.</strong> Tres locales, facturas de proveedor que llegan por correo, foto y papel. El encargado las transcribe a mano cada domingo, y las subidas de precio se detectan semanas tarde.</p>
+          <p><strong>Lo que haría el agente.</strong> Leería cada factura, la cuadraría con el albarán y avisaría de cualquier subida de precio el mismo día. El encargado revisaría avisos, no datos.</p>
           <div class="escenario-cifra">
-            <span class="num">~6 h/semana</span>
-            <span class="note">proyección de ahorro estimada</span>
+            <span class="num">~<span class="count-target" data-count="6">6</span> h/semana</span>
+            <span class="note">estimación ilustrativa, no un dato medido</span>
           </div>
         </article>
       </div>
@@ -176,10 +189,10 @@
   <section id="contacto" class="cta">
     <div class="cta-inner">
       <p class="eyebrow">Primer paso</p>
-      <h2>Una llamada de 30 minutos. Salimos con tu lista de tareas automatizables.</h2>
-      <p>Nos cuentas cómo trabaja tu equipo y te decimos, en la misma llamada, qué procesos merecen un agente y cuáles no. Si no compensa, también se dice.</p>
+      <h2>Una llamada de 30 minutos. Sales con tu lista de tareas automatizables.</h2>
+      <p>Nos cuentas cómo trabaja tu equipo. Te decimos, en la misma llamada, qué merece un agente y qué no. Si no compensa, también te lo decimos.</p>
       <!-- TODO: hola@telar.es y +34 910 000 000 son placeholders — sustituir por los datos reales antes de publicar -->
-      <a href="mailto:hola@telar.es?subject=Auditor%C3%ADa%20de%20procesos" class="btn-dark">Agendar la llamada</a>
+      <a href="mailto:hola@telar.es?subject=Auditor%C3%ADa%20de%20procesos" class="btn-dark">Agendar auditoría →</a>
     </div>
   </section>
 
