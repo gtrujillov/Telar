@@ -164,6 +164,23 @@
     });
   }
 
+  /* --- Inclinación 3D de las tarjetas al pasar el ratón --- */
+  if (finePointer && !reduceMotion) {
+    document.querySelectorAll(".problema-card, .escenario, .noticia-card").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        const rx = (-py * 6).toFixed(2);
+        const ry = (px * 6).toFixed(2);
+        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
   /* --- CTA fijo: aparece tras el primer scroll, se oculta sobre #contacto --- */
   const stickyCta = document.querySelector(".sticky-cta");
   if (stickyCta) {
