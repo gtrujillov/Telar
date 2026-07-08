@@ -1,4 +1,4 @@
-# Telar — web
+# Yuulia — web
 
 Generada con [Eleventy](https://www.11ty.dev/) a partir de `src/`. Multi-página: home + sección de Noticias con una página estática real por artículo (buena para SEO y para compartir). Se construye en GitHub Actions y se publica en GitHub Pages en cada push a `main`.
 
@@ -48,10 +48,10 @@ Al añadir una entrada nueva a `noticias.json` (recomendado: al principio del ar
 
 Estos datos son placeholders, buscar `TODO` en `src/_includes/layout.njk` y `src/index.njk`:
 
-- Email de contacto (`hola@telar.es`)
+- Email de contacto (`hola@yuulia.com`)
 - Teléfono (`+34 910 000 000`)
 - Ciudad del estudio (`Madrid, España`)
-- Dominio real (`https://www.telar.es/`) en `<link rel="canonical">`, Open Graph y `sitemap.njk`
+- Dominio real (`https://www.yuulia.com/`, pendiente de registrar) en `<link rel="canonical">`, Open Graph y `sitemap.njk`
 
 ## Desarrollo local
 

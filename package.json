@@ -1,7 +1,7 @@
 {
   "name": "telera",
   "version": "1.0.0",
-  "description": "Web de Telar. Generada con Eleventy a partir de src/ (páginas estáticas + sección de noticias).",
+  "description": "Web de Yuulia. Generada con Eleventy a partir de src/ (páginas estáticas + sección de noticias).",
   "main": "index.js",
   "private": true,
   "scripts": {

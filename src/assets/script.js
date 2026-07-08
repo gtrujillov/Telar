@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const STORAGE_KEY = "telar-tema";
+  const STORAGE_KEY = "yuulia-tema";
   const root = document.documentElement;
   const toggleBtn = document.getElementById("theme-toggle");
 
@@ -48,7 +48,7 @@
     }
   }
 
-  /* --- Barra de progreso de scroll + parallax de la foto del telar --- */
+  /* --- Barra de progreso de scroll + parallax de la foto de fondo --- */
   const progressBar = document.querySelector(".scroll-progress");
   const parallaxImg = document.querySelector(".visual-break-media img");
   const parallaxContainer = document.querySelector(".visual-break-media");

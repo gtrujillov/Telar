@@ -5,18 +5,18 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.telar.es/</loc>
+    <loc>https://www.yuulia.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.telar.es/noticias/</loc>
+    <loc>https://www.yuulia.com/noticias/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 {%- for item in noticias %}
   <url>
-    <loc>https://www.telar.es/noticias/{{ item.slug }}/</loc>
+    <loc>https://www.yuulia.com/noticias/{{ item.slug }}/</loc>
     <lastmod>{{ item.fecha }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

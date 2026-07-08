@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ title or (item.titulo + " — Noticias · Telar") }}</title>
+<title>{{ title or (item.titulo + " — Noticias · Yuulia") }}</title>
 <meta name="description" content="{{ description or item.resumen }}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.telar.es{{ page.url }}"> <!-- TODO: sustituir por el dominio real antes de publicar -->
+<link rel="canonical" href="https://www.yuulia.com{{ page.url }}">
 
 <!-- Open Graph / redes sociales -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ ogTitle or title or item.titulo }}">
 <meta property="og:description" content="{{ ogDescription or description or item.resumen }}">
 <meta property="og:locale" content="es_ES">
-<meta property="og:url" content="https://www.telar.es{{ page.url }}"> <!-- TODO: sustituir por el dominio real -->
+<meta property="og:url" content="https://www.yuulia.com{{ page.url }}">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
@@ -45,11 +45,11 @@
   <header>
     <a href="/" class="logo" style="text-decoration:none;color:inherit">
       <div class="logo-mark" aria-hidden="true">
-        <span class="h1"></span>
-        <span class="h2"></span>
+        <span class="d1"></span>
+        <span class="d2"></span>
         <span class="v"></span>
       </div>
-      <span class="logo-text">Telar</span>
+      <span class="logo-text">Yuulia</span>
     </a>
     <nav>
       <a class="nav-link" href="{{ homePrefix }}#proceso">Proceso</a>
@@ -66,20 +66,20 @@
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="footer-brand">
-      <span class="name">Telar</span>
+      <span class="name">Yuulia</span>
       <p>Agentes de IA que se ocupan de lo mecánico y devuelven tiempo a las personas. Siempre con supervisión humana.</p>
     </div>
     <div class="footer-col">
       <span class="label">Contacto</span>
       <!-- TODO: placeholders — sustituir por los datos reales antes de publicar -->
-      <a href="mailto:hola@telar.es">hola@telar.es</a>
+      <a href="mailto:hola@yuulia.com">hola@yuulia.com</a>
       <a href="tel:+34910000000">+34 910 000 000</a>
     </div>
     <div class="footer-col">
       <span class="label">Estudio</span>
       <!-- TODO: placeholder — sustituir por la ciudad real -->
       <span class="muted">Madrid, España</span>
-      <span class="muted">© 2026 Telar</span>
+      <span class="muted">© 2026 Yuulia</span>
     </div>
   </footer>
 

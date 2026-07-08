@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     // TODO: cuando el sitio se sirva desde un dominio propio en la raíz
-    // (p. ej. www.telar.es), cambiar a "/".
+    // (p. ej. www.yuulia.com), cambiar a "/".
     pathPrefix: "/Telar/",
     dir: {
       input: "src",
