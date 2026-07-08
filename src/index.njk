@@ -44,20 +44,27 @@ permalink: /
   </div>
 </section>
 
-<!-- ============ VISUAL: NIEBLA ============ -->
+<!-- ============ VIDEO DE PRESENTACIÓN ============ -->
 <section class="visual-break">
   <div class="visual-break-media">
-    <picture>
-      <source media="(max-width: 640px)" srcset="/assets/images/hero-mist-mobile.webp" type="image/webp">
-      <source media="(max-width: 640px)" srcset="/assets/images/hero-mist-mobile.jpg" type="image/jpeg">
-      <source srcset="/assets/images/hero-mist.webp" type="image/webp">
-      <img src="/assets/images/hero-mist.jpg" alt="Niebla azulada elevándose sobre la línea del horizonte, al amanecer" width="2400" height="1590" loading="lazy">
-    </picture>
-    <div class="visual-break-overlay" aria-hidden="true"></div>
+    <video
+      class="visual-break-video"
+      poster="/assets/images/video-poster.jpg"
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-label="Vídeo de presentación de Yuulia. Incluye texto en pantalla; no tiene narración hablada.">
+      <source src="/assets/videos/yuulia-presentacion.webm" type="video/webm">
+      <source src="/assets/videos/yuulia-presentacion.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="visual-break-caption">
-    <p class="visual-break-text">Miles de tareas se repiten en segundo plano, pero la decisión final siempre es tuya — así trabaja Yuulia.</p>
-    <a class="visual-break-credit" href="https://unsplash.com/@conti_photos?utm_source=yuulia&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Foto: Fabrizio Conti / Unsplash</a>
+    <p class="visual-break-text">Así piensa Yuulia. Todo el proceso, en 40 segundos.</p>
+    <details class="visual-break-transcript">
+      <summary>Ver transcripción</summary>
+      <p>Cada empresa tiene el mismo problema silencioso. No en decidir. En repetir. Yuulia se encarga de lo repetitivo. Tú decides lo que importa. Nada se decide solo. Todo pasa por alguien de tu equipo. El tiempo que ganas es tiempo para lo que solo tu equipo sabe hacer. Yuulia.</p>
+    </details>
   </div>
 </section>
 

@@ -48,6 +48,23 @@
     }
   }
 
+  /* --- Vídeo de presentación: solo autorreproduce sin reduced-motion, y se pausa fuera de pantalla --- */
+  const breakVideo = document.querySelector(".visual-break-video");
+  if (breakVideo) {
+    if (reduceMotion) {
+      breakVideo.removeAttribute("loop");
+      breakVideo.setAttribute("controls", "");
+    } else {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) breakVideo.play().catch(() => {});
+          else breakVideo.pause();
+        });
+      }, { threshold: 0.3 });
+      videoObserver.observe(breakVideo);
+    }
+  }
+
   /* --- Barra de progreso de scroll + parallax de la foto de fondo --- */
   const progressBar = document.querySelector(".scroll-progress");
   const parallaxImg = document.querySelector(".visual-break-media img");
