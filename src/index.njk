@@ -46,18 +46,27 @@ permalink: /
 
 <!-- ============ VIDEO DE PRESENTACIÓN ============ -->
 <section class="visual-break">
-  <div class="visual-break-media">
-    <video
-      class="visual-break-video"
-      poster="/assets/images/video-poster.jpg"
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      aria-label="Vídeo de presentación de Yuulia. Incluye texto en pantalla; no tiene narración hablada.">
-      <source src="/assets/videos/yuulia-presentacion.webm" type="video/webm">
-      <source src="/assets/videos/yuulia-presentacion.mp4" type="video/mp4">
-    </video>
+  <div class="macbook-wrap">
+    <div class="macbook-mockup">
+      <picture>
+        <source srcset="/assets/images/macbook-frame.webp" type="image/webp">
+        <img class="macbook-frame-img" src="/assets/images/macbook-frame.jpg" alt="MacBook sobre una mesa, en una oficina luminosa" width="2400" height="1398" loading="lazy">
+      </picture>
+      <div class="macbook-screen">
+        <video
+          class="visual-break-video"
+          poster="/assets/images/video-poster.jpg"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="Vídeo de presentación de Yuulia. Incluye texto en pantalla; no tiene narración hablada.">
+          <source src="/assets/videos/yuulia-presentacion.webm" type="video/webm">
+          <source src="/assets/videos/yuulia-presentacion.mp4" type="video/mp4">
+        </video>
+        <div class="macbook-screen-glare" aria-hidden="true"></div>
+      </div>
+    </div>
   </div>
   <div class="visual-break-caption">
     <p class="visual-break-text">Así piensa Yuulia. Todo el proceso, en 40 segundos.</p>

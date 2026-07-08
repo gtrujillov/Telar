@@ -571,55 +571,38 @@ nav a.nav-link.active { color: var(--anil); }
 .count-target { font-variant-numeric: tabular-nums; }
 
 /* --- Sección visual a sangre completa --- */
-.visual-break { position: relative; margin: 0 0 90px; }
-.visual-break-media {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  height: 60vh;
-  min-height: 380px;
-  max-height: 620px;
+.visual-break { position: relative; margin: 0 0 90px; padding: 20px 0 0; }
+.macbook-wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+.macbook-mockup { position: relative; filter: drop-shadow(0 40px 60px -30px rgba(31,39,51,.4)); }
+.macbook-frame-img { display: block; width: 100%; height: auto; }
+.macbook-screen {
+  position: absolute;
+  left: 28.9%;
+  right: 28.8%;
+  top: 35.1%;
+  bottom: 19.5%;
   overflow: hidden;
-  background: var(--ink);
+  background: #0b0e13;
+  border-radius: 2px;
 }
-.visual-break-media img {
+.macbook-screen video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
-  transform: scale(1.08);
-  will-change: transform;
 }
-.visual-break-media video {
+.macbook-screen-glare {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: var(--ink);
-}
-.visual-break-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(31,39,51,.1) 0%, rgba(31,39,51,.6) 100%),
-    linear-gradient(100deg, var(--anil) 0%, transparent 55%);
-  mix-blend-mode: multiply;
-  opacity: .55;
-}
-[data-theme="oscuro"] .visual-break-overlay {
-  background:
-    linear-gradient(180deg, rgba(27,34,45,.2) 0%, rgba(27,34,45,.8) 100%),
-    linear-gradient(100deg, var(--grana) 0%, transparent 55%);
-  opacity: .65;
+  background: linear-gradient(115deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 78%, rgba(255,255,255,.06) 100%);
+  pointer-events: none;
 }
 .visual-break-caption {
   position: relative;
   z-index: 2;
   max-width: 620px;
-  margin: -110px auto 0;
+  margin: -30px auto 0;
   padding: 0 32px;
   display: flex;
   flex-direction: column;
@@ -649,8 +632,8 @@ nav a.nav-link.active { color: var(--anil); }
 .visual-break-transcript p { margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--ink); font-family: 'Inter', sans-serif; }
 
 @media (max-width: 840px) {
-  .visual-break-media { height: 42vh; min-height: 280px; }
-  .visual-break-caption { margin-top: -70px; padding: 0 24px; }
+  .macbook-wrap { padding: 0 20px; }
+  .visual-break-caption { margin-top: 20px; padding: 0 24px; }
   .visual-break-text { padding: 22px 22px; font-size: 17px; }
 }
 
