@@ -104,7 +104,7 @@
   if (heroH1 && !reduceMotion) {
     const words = heroH1.textContent.trim().split(/\s+/);
     heroH1.innerHTML = words.map((word, i) => {
-      const isAccent = /repetitivas/i.test(word);
+      const isAccent = /repetitivo/i.test(word);
       return `<span class="word"><span class="word-inner${isAccent ? " accent-text" : ""}" style="--i:${i}">${word}</span></span>`;
     }).join(" ");
   }
