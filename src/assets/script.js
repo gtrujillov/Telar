@@ -29,6 +29,37 @@
   }
 })();
 
+/* --- Menú móvil (hamburguesa) --- */
+(() => {
+  "use strict";
+  const toggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("site-nav");
+  if (!toggle || !nav) return;
+
+  const cerrar = () => {
+    nav.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menú");
+  };
+  const abrir = () => {
+    nav.classList.add("nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Cerrar menú");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (nav.classList.contains("nav-open")) cerrar();
+    else abrir();
+  });
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", cerrar));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") cerrar();
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) cerrar();
+  });
+})();
+
 /* ============================================================
    ANIMACIÓN Y EFECTOS
    ============================================================ */
@@ -112,9 +143,13 @@
   /* --- Revelado en scroll: asigna .reveal + retardo escalonado --- */
   const revealGroups = [
     { selector: ".problema-card", step: 90 },
+    { selector: ".beneficio", step: 100 },
     { selector: ".paso", step: 100 },
+    { selector: ".diferenciales li", step: 90 },
     { selector: ".sector", step: 90 },
+    { selector: ".stat-tile", step: 90 },
     { selector: ".escenario", step: 140 },
+    { selector: ".faq-item", step: 60 },
     { selector: ".section-title", step: 0 },
     { selector: ".cta-inner > *", step: 80 },
     { selector: ".visual-break-text, .visual-break-credit", step: 100 },
