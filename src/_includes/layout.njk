@@ -33,7 +33,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:opsz,wght@14..32,100..900&family=Spline+Sans+Mono:wght@300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 
-<!-- TODO: email, teléfono y ciudad son placeholders (ver footer) — se reflejan aquí también; sustituir juntos antes de publicar -->
+<!-- TODO: añadir telephone y address cuando haya datos reales que publicar -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,9 +44,7 @@
   "logo": "{{ site.url }}/assets/favicon.svg",
   "image": "{{ site.url }}/assets/images/video-poster.jpg",
   "areaServed": { "@type": "Country", "name": "España" },
-  "email": "hola@yuulia.com",
-  "telephone": "+34910000000",
-  "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" }
+  "email": "info@yuulia.com"
 }
 </script>
 </head>
@@ -115,11 +113,9 @@
     </div>
     <div class="footer-col">
       <span class="label">Contacto</span>
-      <!-- TODO: placeholders — sustituir por los datos reales antes de publicar -->
-      <a href="mailto:hola@yuulia.com">hola@yuulia.com</a>
-      <a href="tel:+34910000000">+34 910 000 000</a>
-      <!-- TODO: placeholder — sustituir por la ciudad real -->
-      <span class="muted">Madrid, España</span>
+      <!-- TODO: activar Email Routing en Cloudflare para que info@yuulia.com reciba correo.
+           Teléfono y ciudad retirados hasta tener datos reales (no publicar placeholders). -->
+      <a href="mailto:info@yuulia.com">info@yuulia.com</a>
     </div>
     <div class="footer-col">
       <span class="label">Legal</span>

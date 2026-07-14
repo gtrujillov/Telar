@@ -8,6 +8,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   eleventyConfig.addPassthroughCopy("src/assets");
+  // Clave de verificación de IndexNow (Bing y otros buscadores).
+  eleventyConfig.addPassthroughCopy("src/7ffa4ac0215b4f63847c614ea550694c.txt");
 
   // {% icon "reloj" %} — icono SVG inline, trazo único, hereda color del texto.
   eleventyConfig.addShortcode("icon", function (nombre) {
