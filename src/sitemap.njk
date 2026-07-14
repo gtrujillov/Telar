@@ -5,38 +5,61 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.yuulia.com/</loc>
+    <loc>{{ site.url }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.yuulia.com/servicios/gestorias/</loc>
+    <loc>{{ site.url }}/servicios/gestorias/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yuulia.com/servicios/hosteleria/</loc>
+    <loc>{{ site.url }}/servicios/hosteleria/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yuulia.com/servicios/comercio/</loc>
+    <loc>{{ site.url }}/servicios/comercio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yuulia.com/servicios/tecnicos/</loc>
+    <loc>{{ site.url }}/servicios/tecnicos/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.yuulia.com/noticias/</loc>
+    <loc>{{ site.url }}/guias/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/guias/que-es-un-agente-de-ia/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/guias/automatizar-facturas-gestoria/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/guias/cuanto-cuesta-automatizar-procesos/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/noticias/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 {%- for item in noticias %}
   <url>
-    <loc>https://www.yuulia.com/noticias/{{ item.slug }}/</loc>
+    <loc>{{ site.url }}/noticias/{{ item.slug }}/</loc>
     <lastmod>{{ item.fecha }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

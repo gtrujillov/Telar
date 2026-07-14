@@ -8,7 +8,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // {% icon "reloj" %} — icono SVG inline, trazo único, hereda color del texto.
   eleventyConfig.addShortcode("icon", function (nombre) {

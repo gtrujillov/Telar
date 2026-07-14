@@ -89,6 +89,37 @@ permalink: /servicios/gestorias/
   </div>
 </section>
 
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section id="preguntas" class="labeled-section">
+  <p class="eyebrow">Preguntas frecuentes</p>
+  <div>
+    <h2 class="section-title">Lo que preguntan los despachos.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Funciona con mi software contable?</summary>
+        <p>Trabajamos sobre el que ya usas — no te pedimos migrar. En la auditoría comprobamos cómo se conecta tu herramienta concreta antes de comprometernos a nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa con las facturas que el sistema no sabe leer?</summary>
+        <p>Se marcan para revisión humana, con el motivo de la duda visible. El agente nunca rellena un dato que no ha podido verificar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Mis clientes tienen que cambiar cómo envían las facturas?</summary>
+        <p>No. Foto de WhatsApp, PDF por email o papel escaneado — el agente acepta lo que ya te llega hoy. Ordenar la entrada es su trabajo, no el de tus clientes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Esto me deja preparado para Verifactu?</summary>
+        <p>Te acerca: un proceso digitalizado y trazable es mucho más fácil de adaptar que fotos y carpetas de papel. No vendemos cumplimiento automático — revisamos tu caso concreto en la auditoría.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto tarda en estar funcionando?</summary>
+        <p>Un circuito de facturas típico, entre 4 y 8 semanas — empezando en modo borrador con 3-5 clientes de volumen alto, midiendo, y escalando con los números en la mano.</p>
+      </details>
+    </div>
+    <p class="problema-close" style="font-size:16px">¿Quieres el detalle técnico completo? Está en la guía <a href="/guias/automatizar-facturas-gestoria/">Cómo automatizar la entrada de facturas en una gestoría</a>.</p>
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section id="contacto" class="cta">
   <div class="cta-inner">
@@ -100,3 +131,60 @@ permalink: /servicios/gestorias/
     <p class="hint">30 minutos · sin compromiso · te decimos si no compensa</p>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automatización de facturas con IA para gestorías",
+  "serviceType": "Automatización de procesos con inteligencia artificial",
+  "description": "Entrada de facturas automatizada con OCR + IA para despachos y gestorías: captura multiformato, extracción validada y registro supervisado en el software contable existente.",
+  "provider": { "@type": "Organization", "name": "Yuulia", "url": "{{ site.url }}/" },
+  "areaServed": { "@type": "Country", "name": "España" },
+  "audience": { "@type": "BusinessAudience", "name": "Despachos profesionales y gestorías" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Funciona con mi software contable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos sobre el que ya usas — no te pedimos migrar. En la auditoría comprobamos cómo se conecta tu herramienta concreta antes de comprometernos a nada." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con las facturas que el sistema no sabe leer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se marcan para revisión humana, con el motivo de la duda visible. El agente nunca rellena un dato que no ha podido verificar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mis clientes tienen que cambiar cómo envían las facturas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Foto de WhatsApp, PDF por email o papel escaneado — el agente acepta lo que ya te llega hoy. Ordenar la entrada es su trabajo, no el de tus clientes." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esto me deja preparado para Verifactu?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Te acerca: un proceso digitalizado y trazable es mucho más fácil de adaptar que fotos y carpetas de papel. No vendemos cumplimiento automático — revisamos tu caso concreto en la auditoría." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en estar funcionando?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un circuito de facturas típico, entre 4 y 8 semanas — empezando en modo borrador con 3-5 clientes de volumen alto, midiendo, y escalando con los números en la mano." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "{{ site.url }}/#sectores" },
+    { "@type": "ListItem", "position": 3, "name": "Despachos y gestorías" }
+  ]
+}
+</script>
