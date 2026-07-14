@@ -20,7 +20,7 @@
 <meta property="og:image" content="{{ site.url }}/assets/images/video-poster.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
-<meta property="og:image:alt" content="Yuulia — agentes de IA para pymes">
+<meta property="og:image:alt" content="Yuulia — consultora de automatización de procesos con IA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ ogTitle or title or item.titulo }}">
 <meta name="twitter:description" content="{{ ogDescription or description or item.resumen }}">
@@ -39,7 +39,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Yuulia",
-  "description": "Yuulia diseña agentes de IA que automatizan las tareas repetitivas de pymes españolas: despachos profesionales, hostelería, comercio y empresas de servicios.",
+  "description": "Consultora de automatización de procesos con inteligencia artificial. Agentes de IA con supervisión humana para empresas de cualquier tamaño y sector.",
   "url": "{{ site.url }}/",
   "logo": "{{ site.url }}/assets/favicon.svg",
   "image": "{{ site.url }}/assets/images/video-poster.jpg",
@@ -57,7 +57,7 @@
   <span class="aurora aurora-1"></span>
   <span class="aurora aurora-2"></span>
   <span class="aurora aurora-3"></span>
-  <span class="weave"></span>
+  <span class="depth"></span>
   <span class="grain"></span>
 </div>
 
@@ -82,6 +82,7 @@
       <a class="nav-link" href="{{ homePrefix }}#proceso">Proceso</a>
       <a class="nav-link" href="{{ homePrefix }}#sectores">Sectores</a>
       <a class="nav-link{% if '/guias/' in page.url %} active{% endif %}" href="/guias/">Guías</a>
+      <a class="nav-link{% if '/noticias/' in page.url %} active{% endif %}" href="/noticias/">Noticias</a>
       <a class="btn-cta" href="{{ homePrefix }}#contacto">Agendar llamada</a>
       <button id="theme-toggle" class="theme-toggle" type="button" title="Cambiar tema">Oscuro</button>
     </nav>
