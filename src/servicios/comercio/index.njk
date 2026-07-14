@@ -89,6 +89,36 @@ permalink: /servicios/comercio/
   </div>
 </section>
 
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section id="preguntas" class="labeled-section">
+  <p class="eyebrow">Preguntas frecuentes</p>
+  <div>
+    <h2 class="section-title">Lo que preguntan en comercio.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Con qué plataformas de venta funciona?</summary>
+        <p>Sobre las que ya usas. En la auditoría revisamos cómo se conecta cada una de tus plataformas concretas antes de comprometernos a nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿La IA publica sin que yo lo vea?</summary>
+        <p>Al principio, nada se publica sin tu revisión. La autonomía se gana revisión a revisión, y solo en las tareas donde equivocarse es barato.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Las descripciones las escribe la IA?</summary>
+        <p>Prepara borradores siguiendo tu tono y tus reglas — tu equipo valida antes de publicar. El criterio comercial sigue siendo tuyo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si mi stock ya está descuadrado hoy?</summary>
+        <p>El primer paso es siempre partir de un inventario verificado. El agente arranca de datos reales — no arrastra el descuadre que ya tienes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto tarda en estar funcionando?</summary>
+        <p>Depende de cuántas plataformas: un primer circuito en modo borrador, entre 1 y 2 semanas; la sincronización completa, entre 4 y 8.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section id="contacto" class="cta">
   <div class="cta-inner">
@@ -100,3 +130,60 @@ permalink: /servicios/comercio/
     <p class="hint">30 minutos · sin compromiso · te decimos si no compensa</p>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automatización de catálogo y stock con IA para comercio",
+  "serviceType": "Automatización de procesos con inteligencia artificial",
+  "description": "Fichas de producto adaptadas y publicadas en cada plataforma de venta y stock sincronizado entre canales, con revisión humana antes de publicar, sobre las herramientas existentes.",
+  "provider": { "@type": "Organization", "name": "Yuulia", "url": "{{ site.url }}/" },
+  "areaServed": { "@type": "Country", "name": "España" },
+  "audience": { "@type": "BusinessAudience", "name": "Comercios con venta en varias plataformas" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Con qué plataformas de venta funciona?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sobre las que ya usas. En la auditoría revisamos cómo se conecta cada una de tus plataformas concretas antes de comprometernos a nada." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La IA publica sin que yo lo vea?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Al principio, nada se publica sin tu revisión. La autonomía se gana revisión a revisión, y solo en las tareas donde equivocarse es barato." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las descripciones las escribe la IA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prepara borradores siguiendo tu tono y tus reglas — tu equipo valida antes de publicar. El criterio comercial sigue siendo tuyo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si mi stock ya está descuadrado hoy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El primer paso es siempre partir de un inventario verificado. El agente arranca de datos reales — no arrastra el descuadre que ya tienes." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en estar funcionando?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende de cuántas plataformas: un primer circuito en modo borrador, entre 1 y 2 semanas; la sincronización completa, entre 4 y 8." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "{{ site.url }}/#sectores" },
+    { "@type": "ListItem", "position": 3, "name": "Comercio" }
+  ]
+}
+</script>
