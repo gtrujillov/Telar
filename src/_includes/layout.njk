@@ -27,6 +27,7 @@
 <meta name="twitter:image" content="{{ site.url }}/assets/images/video-poster.jpg">
 
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +42,7 @@
   "name": "Yuulia",
   "description": "Consultora de automatización de procesos con inteligencia artificial. Agentes de IA con supervisión humana para empresas de cualquier tamaño y sector.",
   "url": "{{ site.url }}/",
-  "logo": "{{ site.url }}/assets/favicon.svg",
+  "logo": "{{ site.url }}/assets/images/yuulia-logo.png",
   "image": "{{ site.url }}/assets/images/video-poster.jpg",
   "areaServed": { "@type": "Country", "name": "España" },
   "email": "info@yuulia.com"
@@ -68,11 +69,10 @@
   <!-- ============ HEADER ============ -->
   <header>
     <a href="/" class="logo" style="text-decoration:none;color:inherit">
-      <div class="logo-mark" aria-hidden="true">
-        <span class="d1"></span>
-        <span class="d2"></span>
-        <span class="v"></span>
-      </div>
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <path d="M9 9 L50 53 L91 9" fill="none" stroke="var(--anil)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50 53 L50 94" fill="none" stroke="var(--grana)" stroke-width="11" stroke-linecap="round"/>
+      </svg>
       <span class="logo-text">Yuulia</span>
     </a>
     <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
@@ -95,7 +95,13 @@
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="footer-brand">
-      <span class="name">Yuulia</span>
+      <span class="name">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <path d="M9 9 L50 53 L91 9" fill="none" stroke="var(--anil)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 53 L50 94" fill="none" stroke="var(--grana)" stroke-width="11" stroke-linecap="round"/>
+        </svg>
+        Yuulia
+      </span>
       <p>Agentes de IA que se ocupan de lo mecánico y devuelven tiempo a las personas. Siempre con supervisión humana.</p>
     </div>
     <div class="footer-col">
