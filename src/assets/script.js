@@ -69,16 +69,6 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  /* --- Intro de cortina: se retira del DOM tras su animación --- */
-  const intro = document.querySelector(".page-intro");
-  if (intro) {
-    if (reduceMotion) {
-      intro.remove();
-    } else {
-      setTimeout(() => intro.remove(), 1300);
-    }
-  }
-
   /* --- Vídeo de presentación: solo autorreproduce sin reduced-motion, y se pausa fuera de pantalla --- */
   const breakVideo = document.querySelector(".visual-break-video");
   if (breakVideo) {
