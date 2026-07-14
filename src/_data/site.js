@@ -4,4 +4,6 @@
 module.exports = {
   url: "https://www.yuulia.com",
   nombre: "Yuulia",
+  // Versión mostrada en el footer. Fuente única: package.json.
+  version: require("../../package.json").version,
 };
