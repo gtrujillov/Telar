@@ -132,14 +132,12 @@ header {
 }
 
 .logo-mark {
-  position: relative;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
-.logo-mark span { position: absolute; border-radius: 2px; }
-.logo-mark .d1 { left: 1px; top: 1px; width: 3px; height: 15px; background: var(--anil); transform-origin: top left; transform: rotate(40deg); }
-.logo-mark .d2 { right: 1px; top: 1px; width: 3px; height: 15px; background: var(--anil); transform-origin: top right; transform: rotate(-40deg); }
-.logo-mark .v { left: 9px; top: 10px; width: 3px; height: 12px; background: var(--grana); }
+.footer-brand .name { display: flex; align-items: center; gap: 9px; }
+.footer-brand .logo-mark { width: 19px; height: 19px; }
 
 .logo-text {
   font-family: 'Archivo', sans-serif;
