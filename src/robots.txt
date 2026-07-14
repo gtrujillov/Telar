@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.telar.es/sitemap.xml
+Sitemap: https://www.yuulia.com/sitemap.xml
