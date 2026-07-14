@@ -86,16 +86,14 @@ a:hover { color: var(--grana); }
 @keyframes aurora-b { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vmax,8vmax) scale(.9); } }
 @keyframes aurora-c { to { transform: rotate(1turn); } }
 
-/* Trama de hilos: la retícula del telar del que nace la marca */
-.bg-scene .weave {
+/* Viñeta de profundidad: oscurece los bordes sin patrones que distraigan */
+.bg-scene .depth {
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 88px),
-    repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 88px);
-  opacity: .55;
-  -webkit-mask-image: radial-gradient(130% 95% at 50% 0%, #000 0%, transparent 80%);
-          mask-image: radial-gradient(130% 95% at 50% 0%, #000 0%, transparent 80%);
+  background: radial-gradient(120% 100% at 50% 0%, transparent 55%, rgba(31,39,51,.08) 100%);
+}
+[data-theme="oscuro"] .bg-scene .depth {
+  background: radial-gradient(120% 100% at 50% 0%, transparent 50%, rgba(0,0,0,.4) 100%);
 }
 
 /* Grano fotográfico sutil para dar cuerpo a los degradados */
