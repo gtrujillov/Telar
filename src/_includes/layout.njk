@@ -1,5 +1,7 @@
+{%- set lang = lang or 'es' -%}
+{%- set L = t[lang] -%}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ L.htmlLang or lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +11,19 @@
 <meta name="theme-color" content="#F4F6F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B222D" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{%- if page.url == '/' or page.url == '/en/' or page.url == '/pt/' %}
+<link rel="alternate" hreflang="es" href="{{ site.url }}/">
+<link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
+<link rel="alternate" hreflang="pt-PT" href="{{ site.url }}/pt/">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+{%- endif %}
 
 <!-- Open Graph / redes sociales -->
 <meta property="og:type" content="{{ ogType or "website" }}">
 <meta property="og:site_name" content="Yuulia">
 <meta property="og:title" content="{{ ogTitle or title or item.titulo }}">
 <meta property="og:description" content="{{ ogDescription or description or item.resumen }}">
-<meta property="og:locale" content="es_ES">
+<meta property="og:locale" content="{{ L.ogLocale }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}/assets/images/video-poster.jpg">
 <meta property="og:image:width" content="1920">
@@ -40,7 +48,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Yuulia",
-  "description": "Consultora de automatización de procesos con inteligencia artificial. Agentes de IA con supervisión humana para empresas de cualquier tamaño y sector.",
+  "description": "{{ L.schemaDesc }}",
   "url": "{{ site.url }}/",
   "logo": "{{ site.url }}/assets/images/yuulia-logo.png",
   "image": "{{ site.url }}/assets/images/video-poster.jpg",
@@ -51,7 +59,7 @@
 </head>
 <body>
 
-<a href="#main" class="skip-link">Saltar al contenido</a>
+<a href="#main" class="skip-link">{{ L.skip }}</a>
 
 <div class="scroll-progress" aria-hidden="true"></div>
 <div class="bg-scene" aria-hidden="true">
@@ -64,7 +72,8 @@
 
 <div class="wrap">
 
-  {%- set homePrefix = '' if page.url == '/' else '/' %}
+  {%- set langHome = '/' if lang == 'es' else '/' + lang + '/' %}
+  {%- set homePrefix = '' if page.url == langHome else langHome %}
 
   <!-- ============ HEADER ============ -->
   <header>
@@ -79,12 +88,19 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="site-nav">
-      <a class="nav-link" href="{{ homePrefix }}#proceso">Proceso</a>
-      <a class="nav-link" href="{{ homePrefix }}#sectores">Sectores</a>
-      <a class="nav-link{% if '/guias/' in page.url %} active{% endif %}" href="/guias/">Guías</a>
-      <a class="nav-link{% if '/noticias/' in page.url %} active{% endif %}" href="/noticias/">Noticias</a>
-      <a class="btn-cta" href="{{ homePrefix }}#contacto">Agendar llamada</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" title="Cambiar tema">Oscuro</button>
+      <a class="nav-link" href="{{ homePrefix }}#proceso">{{ L.nav.proceso }}</a>
+      <a class="nav-link" href="{{ homePrefix }}#sectores">{{ L.nav.sectores }}</a>
+      {%- if lang == 'es' %}
+      <a class="nav-link{% if '/guias/' in page.url %} active{% endif %}" href="/guias/">{{ L.nav.guias }}</a>
+      <a class="nav-link{% if '/noticias/' in page.url %} active{% endif %}" href="/noticias/">{{ L.nav.noticias }}</a>
+      {%- endif %}
+      <a class="btn-cta" href="{{ homePrefix }}#contacto">{{ L.nav.cta }}</a>
+      <span class="lang-switch" aria-label="Idioma">
+        <a href="/" {% if lang == 'es' %}class="active" aria-current="true"{% endif %} lang="es" hreflang="es">ES</a>
+        <a href="/en/" {% if lang == 'en' %}class="active" aria-current="true"{% endif %} lang="en" hreflang="en">EN</a>
+        <a href="/pt/" {% if lang == 'pt' %}class="active" aria-current="true"{% endif %} lang="pt" hreflang="pt">PT</a>
+      </span>
+      <button id="theme-toggle" class="theme-toggle" type="button" title="{{ L.temaTitulo }}" data-label-dark="{{ L.temaOscuro }}" data-label-light="{{ L.temaClaro }}">{{ L.temaOscuro }}</button>
     </nav>
   </header>
 
@@ -102,34 +118,36 @@
         </svg>
         Yuulia
       </span>
-      <p>Agentes de IA que se ocupan de lo mecánico y devuelven tiempo a las personas. Siempre con supervisión humana.</p>
+      <p>{{ L.footer.brand }}</p>
     </div>
     <div class="footer-col">
-      <span class="label">Empresa</span>
-      <a href="{{ homePrefix }}#proceso">Cómo trabajamos</a>
-      <a href="{{ homePrefix }}#sectores">Sectores</a>
-      <a href="/guias/">Guías</a>
-      <a href="/noticias/">Noticias</a>
+      <span class="label">{{ L.footer.empresa }}</span>
+      <a href="{{ homePrefix }}#proceso">{{ L.footer.comoTrabajamos }}</a>
+      <a href="{{ homePrefix }}#sectores">{{ L.footer.sectores }}</a>
+      {%- if lang == 'es' %}
+      <a href="/guias/">{{ L.footer.guias }}</a>
+      <a href="/noticias/">{{ L.footer.noticias }}</a>
+      {%- endif %}
     </div>
     <div class="footer-col">
-      <span class="label">Contacto</span>
+      <span class="label">{{ L.footer.contacto }}</span>
       <!-- TODO: activar Email Routing en Cloudflare para que info@yuulia.com reciba correo.
            Teléfono y ciudad retirados hasta tener datos reales (no publicar placeholders). -->
       <a href="mailto:info@yuulia.com">info@yuulia.com</a>
     </div>
     <div class="footer-col">
-      <span class="label">Legal</span>
+      <span class="label">{{ L.footer.legal }}</span>
       <!-- TODO: páginas con contenido de plantilla — revisar con un asesor legal antes de publicar -->
-      <a href="/privacidad/">Privacidad</a>
-      <a href="/cookies/">Cookies</a>
-      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">{{ L.footer.privacidad }}</a>
+      <a href="/cookies/">{{ L.footer.cookies }}</a>
+      <a href="/aviso-legal/">{{ L.footer.avisoLegal }}</a>
     </div>
     <p class="footer-copy">© 2026 Yuulia · v{{ site.version }}</p>
   </footer>
 
 </div>
 
-<a href="{{ homePrefix }}#contacto" class="sticky-cta">Agendar auditoría →</a>
+<a href="{{ homePrefix }}#contacto" class="sticky-cta">{{ L.stickyCta }}</a>
 
 <script src="/assets/script.js"></script>
 </body>

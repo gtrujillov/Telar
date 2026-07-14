@@ -168,6 +168,18 @@ nav a.nav-link:hover { color: var(--anil); }
 }
 .btn-cta:hover { background: var(--anil); color: #fff; }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Spline Sans Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+}
+.lang-switch a { color: var(--muted); text-decoration: none; }
+.lang-switch a:hover { color: var(--anil); }
+.lang-switch a.active { color: var(--anil); font-weight: 700; }
+
 .theme-toggle {
   font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
@@ -666,6 +678,7 @@ footer {
   }
   nav#site-nav .btn-cta { text-align: center; margin-top: 16px; border-bottom: none; }
   nav#site-nav .theme-toggle { align-self: flex-start; margin-top: 20px; }
+  nav#site-nav .lang-switch { padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
 }
 @media (max-width: 840px) {
   .hero-grid, .labeled-section, .problema-grid, .escenarios-grid { grid-template-columns: 1fr !important; }

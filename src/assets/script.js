@@ -12,7 +12,9 @@
       delete root.dataset.theme;
     }
     if (toggleBtn) {
-      toggleBtn.textContent = tema === "oscuro" ? "Claro" : "Oscuro";
+      toggleBtn.textContent = tema === "oscuro"
+        ? (toggleBtn.dataset.labelLight || "Claro")
+        : (toggleBtn.dataset.labelDark || "Oscuro");
     }
   }
 
