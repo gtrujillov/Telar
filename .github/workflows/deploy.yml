@@ -39,3 +39,20 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Avisa a los buscadores (Bing, DuckDuckGo, Yandex…) de las URLs publicadas.
+  # La clave es pública por diseño: está servida en /7ffa4ac0215b4f63847c614ea550694c.txt
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar URLs del sitemap a IndexNow
+        run: |
+          URLS=$(curl -s https://www.yuulia.com/sitemap.xml \
+            | grep -oE '<loc>[^<]+</loc>' \
+            | sed -E 's|</?loc>||g' \
+            | jq -R . | jq -s .)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"www.yuulia.com\",\"key\":\"7ffa4ac0215b4f63847c614ea550694c\",\"keyLocation\":\"https://www.yuulia.com/7ffa4ac0215b4f63847c614ea550694c.txt\",\"urlList\":$URLS}" \
+            -w "\nHTTP %{http_code}\n"

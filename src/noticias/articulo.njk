@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: item
 permalink: "/noticias/{{ item.slug }}/"
+ogType: article
 ---
 <section class="labeled-section">
   <p class="eyebrow"><a href="/noticias/">Noticias</a> / {{ item.categoria }}</p>
@@ -32,3 +33,31 @@ permalink: "/noticias/{{ item.slug }}/"
     {%- endif %}
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ item.titulo | dump | safe }},
+  "description": {{ item.resumen | dump | safe }},
+  "datePublished": "{{ item.fecha }}",
+  "dateModified": "{{ item.fecha }}",
+  "inLanguage": "es",
+  "mainEntityOfPage": "{{ site.url }}/noticias/{{ item.slug }}/",
+  "image": "{{ site.url }}/assets/images/video-poster.jpg",
+  "author": { "@type": "Organization", "name": "Yuulia", "url": "{{ site.url }}/" },
+  "publisher": { "@type": "Organization", "name": "Yuulia", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/images/yuulia-logo.png" } },
+  "isBasedOn": {{ item.fuente_url | dump | safe }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Noticias", "item": "{{ site.url }}/noticias/" },
+    { "@type": "ListItem", "position": 3, "name": {{ item.titulo | dump | safe }} }
+  ]
+}
+</script>
