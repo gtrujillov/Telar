@@ -12,7 +12,7 @@ permalink: /cookies/
 
     <div class="prose">
       <h2>1. Esta web usa muy poco</h2>
-      <p>Esta web no utiliza cookies de publicidad ni de seguimiento de terceros. El único dato que guardamos en tu navegador es tu preferencia de tema claro/oscuro, mediante <code>localStorage</code>. Técnicamente no es una cookie, pero se explica aquí por transparencia.</p>
+      <p>Esta web no utiliza cookies de publicidad. En tu navegador guardamos tu preferencia de tema claro/oscuro y tu decisión sobre las cookies de analítica, mediante <code>localStorage</code>. Técnicamente no son cookies, pero se explican aquí por transparencia.</p>
 
       <table class="prose-table">
         <thead>
@@ -20,12 +20,29 @@ permalink: /cookies/
         </thead>
         <tbody>
           <tr><td><code>yuulia-tema</code></td><td>Almacenamiento local, técnico</td><td>Recordar si prefieres el tema claro u oscuro</td><td>Hasta que borres los datos del sitio</td></tr>
+          {% if analytics.ga4Id %}<tr><td><code>yuulia-cookies</code></td><td>Almacenamiento local, técnico</td><td>Recordar si aceptaste o rechazaste las cookies de analítica</td><td>Hasta que borres los datos del sitio</td></tr>{% endif %}
         </tbody>
       </table>
 
       <h2>2. Analítica</h2>
-      <!-- TODO: si se añade analítica (Plausible, GA, etc.), documentarla aquí y añadir el banner de consentimiento correspondiente antes de activarla -->
-      <p>Actualmente no usamos ninguna herramienta de analítica. [POR RELLENAR si esto cambia: nombre de la herramienta, qué mide y cómo desactivarla].</p>
+      {% if analytics.ga4Id %}
+      <p>Usamos <strong>Google Analytics 4</strong> (Google Ireland Ltd.) para entender de forma agregada cómo se usa la web: qué páginas se visitan, desde qué tipo de dispositivo y cuánto tiempo. <strong>Solo se activa si aceptas las cookies</strong> en el aviso que aparece al entrar; si las rechazas, no se carga nada de Google ni se instala ninguna cookie de analítica.</p>
+
+      <table class="prose-table">
+        <thead>
+          <tr><th>Nombre</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>_ga</code></td><td>Cookie de analítica (Google)</td><td>Distinguir visitantes de forma anónima</td><td>2 años</td></tr>
+          <tr><td><code>_ga_*</code></td><td>Cookie de analítica (Google)</td><td>Mantener el estado de la sesión de medición</td><td>2 años</td></tr>
+        </tbody>
+      </table>
+
+      <p>Puedes cambiar tu decisión en cualquier momento:</p>
+      <p><button type="button" class="cookie-btn" data-cookies-abrir>Gestionar cookies</button></p>
+      {% else %}
+      <p>Actualmente no usamos ninguna herramienta de analítica.</p>
+      {% endif %}
 
       <h2>3. Cómo desactivar el almacenamiento local</h2>
       <p>Puedes borrar los datos guardados por este sitio desde la configuración de privacidad de tu navegador. Al hacerlo, la web volverá a mostrarse en el tema por defecto.</p>

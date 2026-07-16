@@ -37,6 +37,11 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
+{% if analytics.ga4Id %}
+<!-- Google Analytics 4: solo se carga si el visitante acepta las cookies (ver script.js) -->
+<script>window.YUULIA_GA4_ID = "{{ analytics.ga4Id }}";</script>
+{% endif %}
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:opsz,wght@14..32,100..900&family=Spline+Sans+Mono:wght@300..700&display=swap" rel="stylesheet">
@@ -141,6 +146,7 @@
       <a href="/privacidad/">{{ L.footer.privacidad }}</a>
       <a href="/cookies/">{{ L.footer.cookies }}</a>
       <a href="/aviso-legal/">{{ L.footer.avisoLegal }}</a>
+      {% if analytics.ga4Id %}<button type="button" class="footer-cookies-btn" data-cookies-abrir>{{ L.cookiesUi.gestionar }}</button>{% endif %}
     </div>
     <p class="footer-copy">© 2026 Yuulia · v{{ site.version }}</p>
   </footer>
@@ -148,6 +154,16 @@
 </div>
 
 <a href="{{ homePrefix }}#contacto" class="sticky-cta">{{ L.stickyCta }}</a>
+
+{% if analytics.ga4Id %}
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="{{ L.cookiesUi.label }}" hidden>
+  <p>{{ L.cookiesUi.aviso }} <a href="/cookies/">{{ L.cookiesUi.masInfo }}</a>.</p>
+  <div class="cookie-banner-botones">
+    <button type="button" id="cookies-rechazar" class="cookie-btn">{{ L.cookiesUi.rechazar }}</button>
+    <button type="button" id="cookies-aceptar" class="cookie-btn cookie-btn--primario">{{ L.cookiesUi.aceptar }}</button>
+  </div>
+</div>
+{% endif %}
 
 <script src="/assets/script.js"></script>
 </body>

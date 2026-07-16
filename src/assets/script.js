@@ -31,6 +31,67 @@
   }
 })();
 
+/* --- Consentimiento de cookies + Google Analytics 4 --- */
+(() => {
+  "use strict";
+
+  const GA_ID = window.YUULIA_GA4_ID;
+  const banner = document.getElementById("cookie-banner");
+  if (!GA_ID || !banner) return;
+
+  const STORAGE_KEY = "yuulia-cookies";
+  let gaCargado = false;
+
+  function cargarGA() {
+    if (gaCargado) return;
+    gaCargado = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "granted"
+    });
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+  }
+
+  function borrarCookiesGA() {
+    document.cookie.split(";").forEach((c) => {
+      const nombre = c.split("=")[0].trim();
+      if (nombre === "_ga" || nombre.startsWith("_ga_")) {
+        const caducada = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+        document.cookie = caducada;
+        document.cookie = caducada + "; domain=." + location.hostname.replace(/^www\./, "");
+      }
+    });
+  }
+
+  function decidir(valor) {
+    localStorage.setItem(STORAGE_KEY, valor);
+    banner.hidden = true;
+    if (valor === "aceptadas") cargarGA();
+    else borrarCookiesGA();
+  }
+
+  document.getElementById("cookies-aceptar").addEventListener("click", () => decidir("aceptadas"));
+  document.getElementById("cookies-rechazar").addEventListener("click", () => decidir("rechazadas"));
+
+  /* Enlaces "Gestionar cookies" (footer y política de cookies) reabren el banner */
+  document.querySelectorAll("[data-cookies-abrir]").forEach((btn) => {
+    btn.addEventListener("click", () => { banner.hidden = false; });
+  });
+
+  const guardado = localStorage.getItem(STORAGE_KEY);
+  if (guardado === "aceptadas") cargarGA();
+  else if (guardado !== "rechazadas") banner.hidden = false;
+})();
+
 /* --- Menú móvil (hamburguesa) --- */
 (() => {
   "use strict";

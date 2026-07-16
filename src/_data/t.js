@@ -23,6 +23,14 @@ module.exports = {
       cookies: "Cookies",
       avisoLegal: "Aviso legal",
     },
+    cookiesUi: {
+      label: "Aviso de cookies",
+      aviso: "Usamos cookies de analítica (Google Analytics) para entender cómo se usa la web y mejorarla. Solo se activan si las aceptas.",
+      masInfo: "Más información",
+      rechazar: "Rechazar",
+      aceptar: "Aceptar",
+      gestionar: "Gestionar cookies",
+    },
   },
   en: {
     ogLocale: "en_US",
@@ -45,6 +53,14 @@ module.exports = {
       privacidad: "Privacy",
       cookies: "Cookies",
       avisoLegal: "Legal notice",
+    },
+    cookiesUi: {
+      label: "Cookie notice",
+      aviso: "We use analytics cookies (Google Analytics) to understand how the site is used and improve it. They are only activated if you accept them.",
+      masInfo: "More information",
+      rechazar: "Reject",
+      aceptar: "Accept",
+      gestionar: "Manage cookies",
     },
   },
   pt: {
@@ -69,6 +85,14 @@ module.exports = {
       privacidad: "Privacidade",
       cookies: "Cookies",
       avisoLegal: "Aviso legal",
+    },
+    cookiesUi: {
+      label: "Aviso de cookies",
+      aviso: "Usamos cookies de análise (Google Analytics) para perceber como o site é utilizado e melhorá-lo. Só são ativadas se as aceitar.",
+      masInfo: "Mais informação",
+      rechazar: "Rejeitar",
+      aceptar: "Aceitar",
+      gestionar: "Gerir cookies",
     },
   },
 };
